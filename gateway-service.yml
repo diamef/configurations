@@ -17,15 +17,17 @@ spring:
         locator:
           enabled: true
       routes:
+      - id: convention-service
+        uri: lb://CONVENTION-SERVICE
+        predicates:
+        - Path=/**
+        
       - id: user-service
         uri: lb://USER-SERVICE
         predicates:
         - Path=/**
     
-      - id: convention-service
-        uri: lb://CONVENTION-SERVICE
-        predicates:
-        - Path=/**
+      
         
       - id: transfer-service
         uri: lb://transfer-service
