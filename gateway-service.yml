@@ -34,11 +34,10 @@ spring:
         filters:
         - RewritePath=/transfer/(?<path>.*), /$\{path}
       - id: account-service
-        uri: lb://account-service
+        uri: lb://ACCOUNT-SERVICE
         predicates:
-        - Path=/account/**
-        filters:
-        - RewritePath=/account/(?<path>.*), /$\{path}
+        - Path=/**
+        
       - id: openapi
         uri: http://localhost:${server.port}
         predicates:
