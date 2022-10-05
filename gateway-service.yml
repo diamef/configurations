@@ -18,7 +18,7 @@ spring:
           enabled: true
       routes:
       - id: convention-service
-        uri: lb://CONVENTION-SERVICE
+        uri: lb://convention-service
         predicates:
         - Path=/**
         
