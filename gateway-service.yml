@@ -26,8 +26,7 @@ spring:
         uri: lb://CONVENTION-SERVICE
         predicates:
         - Path=/conventions/**
-        filters:
-        - RewritePath=/conventions/(?<path>.*), /$\{path}
+        
       - id: transfer-service
         uri: lb://transfer-service
         predicates:
