@@ -20,7 +20,9 @@ spring:
       - id: convention-service
         uri: lb://convention-service
         predicates:
-        - Path=/**
+        - Path=/conventions/**
+        filters:
+        - RewritePath=/conventions/(?<path>.*), /$\{path}
         
       - id: user-service
         uri: lb://USER-SERVICE
