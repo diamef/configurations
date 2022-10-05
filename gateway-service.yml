@@ -23,7 +23,7 @@ spring:
         - Path=/**
     
       - id: convention-service
-        uri: lb://convention-service
+        uri: lb://CONVENTION-SERVICE
         predicates:
         - Path=/conventions/**
         filters:
