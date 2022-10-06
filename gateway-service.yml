@@ -64,5 +64,5 @@ springdoc:
         url: /v3/api-docs/transfer
       - name: account
         url: /v3/api-docs/account
-      - name: auth
+      - name: users
         url: /v3/api-docs/users
