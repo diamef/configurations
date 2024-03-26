@@ -31,9 +31,6 @@ spring:
         - Path=/users/**
         filters:
         - RewritePath=/users/(?<path>.*), /$\{path}
-        - name: users
-          args:
-            configurationName: userAccess
         
       - id: transfer-service
         uri: lb://transfer-service
