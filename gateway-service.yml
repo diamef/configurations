@@ -31,9 +31,9 @@ spring:
         - Path=/users/**
         filters:
         - RewritePath=/users/(?<path>.*), /$\{path}
-        - name: Cors
-            args:
-              configurationName: apiCors
+          - name: Cors
+              args:
+                configurationName: apiCors
         
       - id: transfer-service
         uri: lb://transfer-service
