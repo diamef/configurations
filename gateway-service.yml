@@ -31,9 +31,6 @@ spring:
         - Path=/users/**
         filters:
         - RewritePath=/users/(?<path>.*), /$\{path}
-          - name: Cors
-              args:
-                configurationName: apiCors
         
       - id: transfer-service
         uri: lb://transfer-service
@@ -55,15 +52,7 @@ spring:
         filters:
         - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
        
-      globalcors:
-        corsConfigurations:
-          'apiCors':
-            allowedOrigins: "http://localhost:4200"
-            allowedMethods: "GET,POST,PUT,DELETE"
-            allowedHeaders: "Authorization,Content-Type"
-            allowCredentials: true
-            maxAge: 3600
-
+        
 
 springdoc:
   swagger-ui:
